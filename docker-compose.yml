@@ -1,0 +1,17 @@
+version: '3'
+
+volumes:
+    notebooks:
+    data:
+
+services:
+    dev:
+        image: conda-env:latest
+        container_name: conda-env_dev
+        volumes:
+            - ./data:/workdir/data
+            - ./notebooks:/opt/notebooks
+        tty: true
+        ports:
+            - 8888:8888
+ 
